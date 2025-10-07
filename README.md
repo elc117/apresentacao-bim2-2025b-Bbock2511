@@ -5,14 +5,33 @@ Este projeto consiste em um programa Java, apresentado na última aula, que lê 
 ## Parte 1: Análise Teórica
 
 ### Pergunta 1: O que significa `private` em `private String name;` na classe `Student`?
+```Java
+class Student {
+    private String name;
+    ...
+}
+```
 
 O modificador de acesso `private` implementa o **encapsulamento**. Ele garante que o atributo `name` só possa ser acessado pelo código que está dentro da própria classe `Student`. Nenhuma classe externa, como a `StudentGrades`, pode acessar este campo diretamente, o que protege o estado interno do objeto e força o uso de métodos públicos (como o construtor) para interagir com seus dados.
 
 ### Pergunta 2: Substitua `student.getGrade()` por `student.grade`. O que acontece?
+```Java
+double totalGrade = 0.0;
+for (Student student : students) {
+    totalGrade += student.grade;
+}
+double meanGrade = students.size() > 0 ? totalGrade / students.size() : 0.0;
+```
 
 A compilação falha com o erro **`grade has private access in Student`**. Isso ocorre porque o atributo `grade` também é `private`. A tentativa de acesso direto de uma classe externa viola a regra do encapsulamento. A única forma permitida de obter o valor da nota é através do método público `getGrade()`, que serve como uma interface segura para os dados do objeto.
 
 ### Pergunta 3: Como renomear a classe `StudentGrades` para `Main` sem erro?
+
+```Java
+public class Main {
+  ...
+}
+```
 
 Para renomear a classe principal sem erros de compilação, duas alterações sincronizadas são necessárias:
 1.  **No código:** Alterar a declaração `public class StudentGrades` para `public class Main`.
