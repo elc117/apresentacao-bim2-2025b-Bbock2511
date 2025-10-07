@@ -38,12 +38,12 @@ Crie os dois arquivos abaixo na mesma pasta:
 #### Compilação do Programa
 O GIF abaixo demonstra a execução do comando `javac` no terminal, que compila o código-fonte `.java` em bytecode `.class` sem gerar erros.
 
-**[INSERIR GIF 1 AQUI: Processo de Compilação]**
+![Compilação do programa](GIF-1.gif)
 
 #### Execução do Programa
 O GIF abaixo mostra a execução do comando `java StudentGrades`, que inicia o programa. Ele lê o arquivo `students.csv`, calcula a média das notas e imprime o resultado no console.
 
-**[INSERIR GIF 2 AQUI: Execução do Programa]**
+![Execução do programa](GIF-2.gif)
 
 ---
 
